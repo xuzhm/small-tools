@@ -1,0 +1,41 @@
+logfile /home/vis/xuzhimin/screenlog/screen-%t-%p-%S-%n.log
+#caption always "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%H %Y/%m/%d "
+
+#caption always "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%H %Y-%m-%d %c %p" 
+
+
+# 进入screen后，在屏幕最下一行显示窗口列表和时钟
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w%=%{..G} %H(%l) %{..Y}  %p %Y/%m/%d %c:%s           "
+# %H  hostname
+hardstatus string "%{.bW}%-w%{.rY}%n %f%t %{-}%+w   %{..G}  %=  %H %{kw}%{= R} [%Y/%m/%d %c:%s] %{-}"
+
+defscrollback 500000
+
+
+# Automatically detach on hangup.
+autodetach on
+
+# If a screen dies, don't freeze the whole screen waiting for it.
+nonblock on
+
+# UTF-8 is necessary.
+defutf8 on
+
+# Define Encoding
+defencoding UTF-8
+encoding UTF-8 UTF-8
+
+#caption always "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%H %Y/%m/%d "
+
+#caption always "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%H %Y-%m-%d %c %p" 
+#
+#
+
+# xterm-256 这些都支持滚屏
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# remove some stupid / dangerous key bindings  
+# Ctrl-a s   lock screen
+bind s
